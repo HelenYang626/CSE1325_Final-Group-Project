@@ -1,7 +1,7 @@
 package Project;
 //done
 
-public class Assignment { //subclass -of Item class,add later 
+public class Assignment extends Item { //subclass -of Item class,add later 
 	private double maxPoints;
 	private double weight;
 	
