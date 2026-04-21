@@ -8,13 +8,15 @@ public class Assignment extends Item { //subclass -of Item class,add later
 	//constructor
 	public Assignment() 
 	{
+		super();
 		this.maxPoints=100.0; // might change it
 		this.weight=.10;     //might change 
 	}
 	//Parameterized constructor
-	public Assignment(double mP,double aW)
+	public Assignment(String title,String description,LocalDate dueDate,String type, double mP,double aW)
 	{
 		//call mutators
+		super(title,description,dueDate,Type);
 		this.setMaxPoints(mP);
 		this.setWeight(aW);
 	}
@@ -53,7 +55,8 @@ public class Assignment extends Item { //subclass -of Item class,add later
 	}
 	public String toString()
 	{
-		return  "Max Points: "+ getMaxPoints()+ "\nWeight: "+ getWeight();
+		
+		return  super.toString() + "\nMax Points: "+ getMaxPoints()+ "\nWeight: "+ getWeight();
 	}
 	
 
