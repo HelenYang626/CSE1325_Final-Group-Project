@@ -15,7 +15,7 @@ public class Assignment extends Item { //subclass -of Item class,add later
 	public Assignment(String title,String description,LocalDate dueDate,String type, double mP,double aW)
 	{
 		//call mutators
-		super(title,description,dueDate,Type);
+		super(title,description,dueDate,type);
 		this.setMaxPoints(mP);
 		this.setWeight(aW);
 	}
