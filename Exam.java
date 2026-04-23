@@ -12,9 +12,9 @@ public class Exam extends Assignment{
 		
 	}
 	//parametrized constructor
-	public Exam(double mP,double aW,double aD,String aL)
+	public Exam(String title, String description, LocalDate dueDate, String type, double mP,double aW,double aD,String aL)
 	{
-		super(mP,aW);
+		super(title, description, dueDate, type, mP, aW);
 		this.setDuration(aD);
 		this.setLocation(aL);
 	}
