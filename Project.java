@@ -1,4 +1,4 @@
-package Project;
+// package Project;
 
 public class Project extends Assignment {
 	private int groupSize;
