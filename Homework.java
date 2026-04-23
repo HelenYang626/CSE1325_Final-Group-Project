@@ -11,9 +11,9 @@ public class Homework extends Assignment {
 		this.problemNumbers=1;
 	}
 	
-	public Homework(double mP,double aW, int pC,int pN)
+	public Homework(String title, String description, LocalDate dueDate, String type, double mP,double aW, int pC,int pN)
 	{
-		super(mP,aW);
+		super(title, description, dueDate, type, mP,aW);
 		this.setPageCount(pC);
 		this.setProblemNumbers(pN);
 	}
