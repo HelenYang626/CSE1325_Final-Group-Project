@@ -22,11 +22,11 @@ public class Item {
     }
 
     // PARAMETERIZED CONSTRUCTOR
-    public Item(String title, String description, LocalDate dueDate, String type) {
+    public Item(String title, String description, LocalDate dueDate, boolean complete, String type) {
         this.setTitle(title);
         this.setDescription(description);
         this.setDueDate(dueDate);
-        this.complete = false; // New items are incomplete by default
+        this.complete = complete;
         this.type = type; 
     }
 
