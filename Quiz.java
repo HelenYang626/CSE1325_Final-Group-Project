@@ -1,4 +1,4 @@
-package Project;
+// package Project;
 //done
 
 public class Quiz extends Assignment{
@@ -11,9 +11,9 @@ public class Quiz extends Assignment{
 		this.timeLimit=10;
 		this.questionCount=1;
 	}
-	public Quiz(double mP,double aW,double tL,int qC)
+	public Quiz(String title, String description, LocalDate dueDate, String type, double mP,double aW,double tL,int qC)
 	{
-		super(mP,aW);
+		super(title, description, dueDate, type, mP,aW);
 		this.setTimeLimit(tL);
 		this.setQuestionCount(qC);
 	}
