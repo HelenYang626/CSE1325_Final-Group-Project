@@ -11,9 +11,9 @@ public class Project extends Assignment {
 		this.hasPresentation=true;
 		
 	}
-	public Project(double mP,double aW,int gS,boolean hP)
+	public Project(String title, String description, LocalDate dueDate, String type, double mP,double aW,int gS,boolean hP)
 	{
-		super(mP,aW);
+		super(title, description, dueDate, type, mP, aW);
 		this.setGroupSize(gS);
 		this.setHasPresentation(hP);
 	}
