@@ -11,7 +11,7 @@ public class Task extends Item {
 
     // Constructor
     public Task(String title, String description, LocalDate dueDate, boolean complete, String category) {
-        super(title, description, dueDate, complete);
+        super(title, description, dueDate, complete, "Task");
         this.category = category;
     }
 
