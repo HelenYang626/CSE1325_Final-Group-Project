@@ -28,7 +28,7 @@ public class Exam extends Assignment{
 	}
 	public void setDuration(double aD)
 	{
-		if(aD>=0 || aD<=180) // might change it
+		if(aD>=0 && aD<=180) // changed || to &&
 		{
 			this.duration=aD;
 		}
