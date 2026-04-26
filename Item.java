@@ -7,7 +7,7 @@ public class Item {
     private String description;
     private LocalDate dueDate;
     private boolean complete;
-    private String type; // Stores the type of item such as "Assignment", "Task", or "Project"
+    private String type; // Stores the type of item such as "Exam", "Homework", "Project", etc.
 
     // CONSTANTS
     public static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("MM/dd/yyyy"); // For consistent date formatting
@@ -17,16 +17,16 @@ public class Item {
         this.title = "Untitled";
         this.description = "";
         this.dueDate = LocalDate.now().plusDays(7); // Default due date is 7 days
-        this.complete = false;
+        this.complete = false; // Always starts as an incomplete item
         this.type = "Generic"; // Default type
     }
 
     // PARAMETERIZED CONSTRUCTOR
-    public Item(String title, String description, LocalDate dueDate, boolean complete, String type) {
+    public Item(String title, String description, LocalDate dueDate, String type) {
         this.setTitle(title);
         this.setDescription(description);
         this.setDueDate(dueDate);
-        this.complete = complete;
+        this.complete = false; // Always starts as an incomplete item
         this.type = type; 
     }
 
@@ -95,12 +95,6 @@ public class Item {
         } else {
             return "o"; // pending
         }
-    }
-
-    // printItem() method - prints the item details in a formatted way
-    // format: 
-    public void printItem() {
-        System.out.printf("[%s] %s | Due: %s | %s%n", type, title, dueDate.format(DATE_FORMATTER), (description.length() > 50) ? description.substring(0, 47) + "..." : description);
     }
 
     // toString() method
