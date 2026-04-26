@@ -8,6 +8,7 @@ public class Task extends Item {
     public Task() {
         super();
         this.category = "General";
+    }
 
     // Constructor
     public Task(String title, String description, LocalDate dueDate, boolean complete, String category) {
