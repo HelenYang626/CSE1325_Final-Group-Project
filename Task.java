@@ -45,6 +45,7 @@ public class Task extends Item {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Task task = (Task) obj;
-        return this.category.equals(task.category);
+        // return this.category.equals(task.category); changed to compare titles instead of categories
+        return getTitle().equals(task.getTitle());
     }
 }
