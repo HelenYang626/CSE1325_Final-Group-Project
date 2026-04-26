@@ -53,7 +53,7 @@ public class Project extends Assignment {
 	}
 	public String toString()
 	{
-		return super.toString() + "\nGroup Size:: "+ getGroupSize()+ "\nHas Presentation: "+ getHasPresentation();
+		return super.toString() + "\nGroup Size: "+ getGroupSize()+ "\nHas Presentation: "+ getHasPresentation();
 	}
 
 }
