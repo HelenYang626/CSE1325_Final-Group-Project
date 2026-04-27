@@ -10,6 +10,7 @@ public class Assignment extends Item { //subclass -of Item class,add later
 		super();
 		this.maxPoints=100.0; // might change it
 		this.weight=.10;     //might change 
+		this.setType("Assignment"); // sets the type of the item as an "Assignment"
 	}
 	//Parameterized constructor
 	public Assignment(String title,String description,LocalDate dueDate,String type, double mP,double aW)
@@ -32,25 +33,18 @@ public class Assignment extends Item { //subclass -of Item class,add later
 	
 	public void setMaxPoints(double mP)
 	{
-		if(mP>=0 && mP<=100) //figure out what the condition will be,if anny
-		{
-			this.maxPoints=mP;
+		// throws exception if the max points are less than 0
+		if (mP <= 0) {
+			throw new IllegalArgumentException("Max points must be greater than 0.");
 		}
-		else
-		{
-			this.maxPoints=100;
-		}
+		this.maxPoints = mP;
 	}
 	public void setWeight(double aW)
 	{
-		if(aW>0 && aW<=.35) //figure out what the condition will be,if any
-		{
-			this.weight=aW;
+		if (aW <= 0 || aw > 100.0) {
+			throw new IllegalArgumentException("Weight must be between 0 and 100");
 		}
-		else
-		{
-			this.weight=.10;
-		}
+		this.weight = aW;
 	}
 	public String toString()
 	{
