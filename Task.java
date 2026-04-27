@@ -2,44 +2,48 @@ import java.time.LocalDate;
 
 public class Task extends Item {
 
-    private String category;
+    private double estHrs; // changed 'category' instance variable which was not used to 'estHrs' 
 
     // Default constructor
     public Task() {
         super();
-        this.category = "General";
+        this.estHrs = 1.0;
+        this.setType("Task"); // sets type as 'Task'
     }
 
     // Constructor
-    public Task(String title, String description, LocalDate dueDate, boolean complete, String category) {
-        super(title, description, dueDate, complete, "Task");
-        this.category = category;
+    public Task(String title, String description, LocalDate dueDate, String type, double estHrs) {
+        super(title, description, dueDate, type); // updated constructor 
+        this.estHrs = estHrs; // changed instance variable to 'estHrs'
     }
 
     // Getter
-    public String getCategory() {
-        return this.category;
+    public String getEstHrs() { // changed it to get estHrs
+        return this.estHrs;
     }
 
     // Setter
-    public void setCategory(String category) {
-        this.category = category;
+    public void setEstHrs(double estHrs) { // changed it to get estHrs
+        this.estHrs = estHrs;
     }
 
-    // getType method
+    // COMMENTED OUT - not needed as the method is already in Item.java file
+    /* getType method
     @Override
     public String getType() {
         return "Task";
     }
+    */
 
     // toString method
     @Override
     public String toString() {
         return super.toString() + 
-               "\nCategory: " + this.category;
+               "\nEstimated Hours: " + this.estTime + " hrs";
     }
 
-    // equals method
+    // COMMENTED OUT - not used anywhere in GUI for this project
+    /* equals method
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
@@ -48,4 +52,5 @@ public class Task extends Item {
         // return this.category.equals(task.category); changed to compare titles instead of categories
         return getTitle().equals(task.getTitle());
     }
+    */
 }
