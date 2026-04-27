@@ -9,6 +9,7 @@ public class Homework extends Assignment {
 		super();
 		this.pageCount= 1;
 		this.problemNumbers=1;
+		this.setType("Homework"); // sets type as 'Homework'
 	}
 	
 	public Homework(String title, String description, LocalDate dueDate, String type, double mP,double aW, int pC,int pN)
@@ -29,26 +30,19 @@ public class Homework extends Assignment {
 	
 	public void setPageCount(int pC)
 	{
-		if(pC>=1) //might change it
-		{
-			this.pageCount=pC;
+		// throws exception if page count is less than 1.
+		if (pC < 1) {
+			throw new IllegalArgumentException("Page count must be at least 1.");
 		}
-		else 
-		{
-			this.pageCount=1;
-		}
-		
+		this.pageCount = pC;
 	}
 	public void setProblemNumbers(int pN)
 	{
-		if(pN>=1)//might change
-		{
-			this.problemNumbers=pN;
+		// throws exception if problem count is less than 1.
+		if (pN < 1) {
+			throw new IllegalArgumentException("Problem count must be at least 1.");
 		}
-		else
-		{
-			this.problemNumbers=1;
-		}
+		this.problemnumbers = pN;
 	}
 	public String toString()
 	{
