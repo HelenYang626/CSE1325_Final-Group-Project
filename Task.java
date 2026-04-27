@@ -24,6 +24,9 @@ public class Task extends Item {
 
     // Setter
     public void setEstHrs(double estHrs) { // changed it to get estHrs
+        if (estHrs < 0) {
+            throw new IllegalArgumentException("Estimated time cannot be negative.");
+        }
         this.estHrs = estHrs;
     }
 
