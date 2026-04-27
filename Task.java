@@ -18,7 +18,7 @@ public class Task extends Item {
     }
 
     // Getter
-    public String getEstHrs() { // changed it to get estHrs
+    public double getEstHrs() { // changed it to get estHrs
         return this.estHrs;
     }
 
@@ -42,7 +42,7 @@ public class Task extends Item {
     @Override
     public String toString() {
         return super.toString() + 
-               "\nEstimated Hours: " + this.estTime + " hrs";
+               "\nEstimated Hours: " + this.estHrs + " hrs";
     }
 
     // COMMENTED OUT - not used anywhere in GUI for this project
