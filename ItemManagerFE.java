@@ -144,7 +144,7 @@ public class ItemManagerFE
             String status = (String) statusBox.getSelectedItem();
 
             // create new item object
-            Item item = new Item(title, desc, due, false, type);
+            Item item = new Item(title, desc, due, type);
 
             // if finished, mark as complete
             if (status.equals("Finished")) 

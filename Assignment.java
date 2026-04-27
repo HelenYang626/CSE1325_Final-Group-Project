@@ -41,7 +41,7 @@ public class Assignment extends Item { //subclass -of Item class,add later
 	}
 	public void setWeight(double aW)
 	{
-		if (aW <= 0 || aw > 100.0) {
+		if (aW <= 0 || aW > 100.0) {
 			throw new IllegalArgumentException("Weight must be between 0 and 100");
 		}
 		this.weight = aW;
