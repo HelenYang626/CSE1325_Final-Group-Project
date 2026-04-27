@@ -4,10 +4,17 @@ public class Reading extends Task {
 
     private int pages;
 
+    // Default constructor
+    public Reading() {
+        super();
+        this.pages = 10;
+        this.setType("Reading");
+    }
+
     // Constructor
-    public Reading(String title, String description, LocalDate dueDate, boolean complete,
-                   String category, int pages) {
-        super(title, description, dueDate, complete, category);
+    public Reading(String title, String description, LocalDate dueDate,
+                   String type, double estHrs, int pages) {
+        super(title, description, dueDate, type, estHrs);
         this.pages = pages;
     }
 
@@ -18,6 +25,9 @@ public class Reading extends Task {
 
     // Setter
     public void setPages(int pages) {
+        if (pages < 0) {
+            throw new IllegalArgumentException("Pages cannot be negative.");
+        }
         this.pages = pages;
     }
 
