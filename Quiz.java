@@ -11,6 +11,7 @@ public class Quiz extends Assignment{
 		super();
 		this.timeLimit=10;
 		this.questionCount=1;
+		this.setType("Quiz"); // sets type to 'Quiz'
 	}
 	public Quiz(String title, String description, LocalDate dueDate, String type, double mP,double aW,double tL,int qC)
 	{
@@ -31,25 +32,17 @@ public class Quiz extends Assignment{
 	
 	public void setTimeLimit(double tL)
 	{
-		if(tL>=10)
-		{
-			this.timeLimit=tL;
+		if (tL < 1) {
+			throw new IllegalArgumentException("Time limit must be at least 1 minute.");
 		}
-		else
-		{
-			this.timeLimit=10;
-		}
+		this.timeLimit = tL;
 	}
 	public void setQuestionCount(int qC)
 	{
-		if(qC>=1)
-		{
-			this.questionCount=qC;
+		if (qC < 1) {
+			throw new IllegalArgumentException("Question count must be at least 1.");
 		}
-		else
-		{
-			this.questionCount=1;
-		}
+		this.questionCount = qC;
 	}
 	public String toString()
 	{
