@@ -10,7 +10,7 @@ public class Project extends Assignment {
 		super();
 		this.groupSize=2;
 		this.hasPresentation=true;
-		
+		this.setType("Project"); // sets type to 'Project'
 	}
 	public Project(String title, String description, LocalDate dueDate, String type, double mP,double aW,int gS,boolean hP)
 	{
@@ -31,25 +31,16 @@ public class Project extends Assignment {
 	
 	public void setGroupSize(int gS)
 	{
-		if(gS>=2)
-		{
-			this.groupSize=gS;
-		}
-		else
-		{
-			this.groupSize=2;
-		}
+		// throws exception if the group size is less than 1
+		if (gS < 1) {
+            throw new IllegalArgumentException("Group size must be at least 1.");
+        }
+        this.groupSize = gS;
 	}
 	public void setHasPresentation(boolean hP)
 	{
-		if(this.groupSize>=2) 
-		{
-			this.hasPresentation=hP;
-		}
-		else
-		{
-			this.hasPresentation=false;
-		}
+		// sets boolean to whether there's a presentation or not
+		this.hasPresentation = hasPresentation;
 	}
 	public String toString()
 	{
