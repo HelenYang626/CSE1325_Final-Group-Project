@@ -40,7 +40,7 @@ public class Project extends Assignment {
 	public void setHasPresentation(boolean hP)
 	{
 		// sets boolean to whether there's a presentation or not
-		this.hasPresentation = hasPresentation;
+		this.hasPresentation = hP;
 	}
 	public String toString()
 	{
