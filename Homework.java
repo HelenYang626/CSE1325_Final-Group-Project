@@ -42,7 +42,7 @@ public class Homework extends Assignment {
 		if (pN < 1) {
 			throw new IllegalArgumentException("Problem count must be at least 1.");
 		}
-		this.problemnumbers = pN;
+		this.problemNumbers = pN;
 	}
 	public String toString()
 	{
