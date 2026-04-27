@@ -1,31 +1,39 @@
 import java.time.LocalDate;
 
 public class Meeting extends Task {
-
-    private double duration;
     private String location;
 
+    // Added default constructor
+    public Meeting() {
+        super();
+        this.location = "TBD";
+        this.setType("Meeting");
+    }
+
     // Constructor
-    public Meeting(String title, String description, LocalDate dueDate, boolean complete,
-                   String category, double duration, String location) {
-        super(title, description, dueDate, complete, category);
-        this.duration = duration;
+    public Meeting(String title, String description, LocalDate dueDate,
+                   String type, double estHrs, String location) {
+        super(title, description, dueDate, type, estHrs);
         this.location = location;
     }
 
     // Getters
+    /* COMMENTED OUT: method already in Task class
     public double getDuration() {
         return this.duration;
     }
+    */ 
 
     public String getLocation() {
         return this.location;
     }
 
     // Setters
+    /* COMMENTED OUT: method already in Task class
     public void setDuration(double duration) {
         this.duration = duration;
     }
+    */
 
     public void setLocation(String location) {
         this.location = location;
@@ -35,7 +43,6 @@ public class Meeting extends Task {
     @Override
     public String toString() {
         return super.toString() +
-               "\nDuration: " + this.duration +
                "\nLocation: " + this.location;
     }
 }
