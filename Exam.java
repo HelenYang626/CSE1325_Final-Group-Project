@@ -8,8 +8,8 @@ public class Exam extends Assignment{
 	{
 		super();
 		this.duration=30.0; //might change
-		this.location="Class"; //might change
-		
+		this.location="TBD"; // sets the default location to TBD
+		this.setType("Exam"); // sets the type of assignment as 'Exam'.
 	}
 	//parametrized constructor
 	public Exam(String title, String description, LocalDate dueDate, String type, double mP,double aW,double aD,String aL)
@@ -28,14 +28,11 @@ public class Exam extends Assignment{
 	}
 	public void setDuration(double aD)
 	{
-		if(aD>=0 && aD<=180) // changed || to &&
-		{
-			this.duration=aD;
+		// throws exception if the duration is less than 0 
+		if (aD < 0) {
+			throw new IllegalArgumentException("Duration cannot be negative.");
 		}
-		else
-		{
-			this.duration=30.0;
-		}
+		this.duration = aD;
 	}
 	
 	public void setLocation(String aL) 
@@ -46,7 +43,7 @@ public class Exam extends Assignment{
 		}
 		else
 		{
-			this.location="Class";
+			this.location="TBD";
 		}
 	}
 	
