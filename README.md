@@ -1,6 +1,5 @@
 # Student Task & Assignment Management System
-
-A Java application for students to manage items such as academic tasks, assignments, exams, and study activities using a graphical user interface (GUI). This project demonstrates object-oriented (OOP) principles, inheritance hierarchies, exception handling and Swing GUI dvelopment. It is designed as a final course project and compatible with Eclipse IDE and Visual Studio IDE. 
+A Java application for students to manage items such as academic tasks, assignments, exams, and study activities using a graphical user interface (GUI). This project demonstrates object-oriented (OOP) principles, inheritance hierarchies, exception handling, and Swing GUI development. It is designed as a final course project and is compatible with Eclipse IDE and Visual Studio Code. 
 
 ## Table of Contents
 - [Overview](#overview)
@@ -10,51 +9,48 @@ A Java application for students to manage items such as academic tasks, assignme
 - [Getting Started in Eclipse](#getting-started-in-eclipse)
 - [How to Use](#how-to-use)
 - [UML Diagram](#uml-diagram)
-- [Exception Handling](#exception-handlling)
+- [Exception Handling](#exception-handling)
 - [Testing Checklist](#testing-checklist)
 - [Known Limitations](#known-limitations)
-- [Future Enhancements](#future-enhacements)
+- [Future Enhancements](#future-enhancements)
 - [Credits](#credits)
 - [License](#license)
 
 ## Overview
-
 **Student Task & Assignment Management System** allows students to organize their various types of academic workload by tracking deadlines and monitoring completion status. Each item includes common properties (title, description, due date, completion status) with attributes that are specific depending on the item type selected. The program uses clear GUI components of user interaction and demonstrates OOP structure and event-driven design.
 
 Main Java Concepts illustrated:
 - **Inheritance** - Item -> Assignment -> (Homework, Quiz, Project, Exam) and Item -> Task -> (Study, Meeting, Reading)
 - **Encapsulation** - Private fields with public getters/setters
-- **Polymorphism** - Overriden toString() methods for each item type
-- **Exception Handling** - Custom exceptions (DusplicateItemException, ItemNotFound Exception)
+- **Polymorphism** - Overridden toString() methods for each item type
+- **Exception Handling** - Custom exceptions (DuplicateItemException, ItemNotFoundException)
 - **GUI Development** - Swing-based interface with event-driven programming
 - **Input validaton** - Validation performed in mutator methods
 
-
 ## Key Features
-1. **Add Item** - Create 7 different types of academic tasks with type-specific attributes
-2. **Delete Item** - Remove items by its title
-3. **Update Status** - Modify the status of items by its title to either complete or pending
-4. **Display All** - Display all items automatically sorted by due date from earliest to latest date
-5. **Show Overdue** - Filter and display only incomplete tasks past their due date
-6. **Search Item** - Find items by its title (case-insentitive)
-7. **Status Indicators** - Visual symbols that indicate the status of items (✓ COMPLETE, ! OVERDUE, ○ PENDING)
+1. **Add Item** - Create 7 different types of academic tasks with type-specific attributes.
+2. **Delete Item** - Remove items by its title.
+3. **Update Status** - Modify the status of items by their title to either complete or pending.
+4. **Display All** - Display all items automatically sorted by due date from earliest to latest date.
+5. **Show Overdue** - Filter and display only incomplete tasks past their due date.
+6. **Search Item** - Find items by their title (case-insensitive).
+7. **Status Indicators** - Visual symbols that indicate the status of items (✓ COMPLETE, ! OVERDUE, ○ PENDING). Note: Once an overdue item is marked complete, it shows ✓ COMPLETE instead of ! OVERDUE.
 
 ## Supported Item Types
 | Type | Attributes | Validation Rules |
-| **Homework** | Max points, weight, page count, problem count | Points > 0, 0 < weight <= 1.0, pages >= 1, problems >= 1|
-| **Quiz** | Max points, weight, time limit, question count | Points > 0, 0 < weight <= 1.0, time >= 1 minute, questions >= 1|
-| **Project**| Max points, weight, group size, has presentation | Points > 0, 0 < weight <= 1.0, group size >= 1, present is true or false
-| **Exam** | Max points, weight, duration, location | Points > 0, 0 < weight <= 1.0, duration >= 0, location non-empty |
+|------|------------|------------------|
+| **Homework** | Max points, weight, page count, problem count | Points > 0, 0 < weight ≤ 1.0, pages ≥ 1, problems ≥ 1|
+| **Quiz** | Max points, weight, time limit, question count | Points > 0, 0 < weight ≤ 1.0, time ≥ 1 minute, questions ≥ 1|
+| **Project**| Max points, weight, group size, has presentation | Points > 0, 0 < weight ≤ 1.0, group size ≥ 1, hasPresentation boolean is true or false
+| **Exam** | Max points, weight, duration, location | Points > 0, 0 < weight ≤ 1.0, duration ≥ 0, location non-empty |
 | **Study** | Estimated hours, location | Hours > 0, location non-empty |
 | **Meeting** | Estimated hours, location | Hours > 0, location non-empty |
-| **Reading** | Estimated hours, pages | Hours > 0, pages >=1 |
-
+| **Reading** | Estimated hours, pages | Hours > 0, pages ≥ 1 |
 
 ## Requirements
 - Java development kit (JDK 17)
-- IDE such as Visual Studio Code, Eclipse or IntelliJ
-- Basic understanding of java and object-oriented programming
-
+- IDE such as Visual Studio Code, Eclipse, or IntelliJ
+- Basic understanding of Java and object-oriented programming
 
 ## Getting Started in Eclipse
 1. Open Eclipse IDE
@@ -64,15 +60,36 @@ Main Java Concepts illustrated:
 5. Locate ItemManagerFE.java
 6. Right-click the file  and select Run As -> Java Application
 
-
 ## How to Use
-1. Launch the application
-2. Enter title, description, and due date.
-3. Select item type.
-4. Click **Add Item**.
-5. Enter extra attributes when prompted.
-6. Use buttons to display, search, delete, or update items.
-7. Use **Show Overdue** to view overdue items.
+
+### Adding an Item
+1. Launch the application.
+2. Enter **Title**, **Description** (optional), and **Due Date** (MM/DD/YYYY format) in the corresponding input fields.
+3. Select **Item Type** from the dropdown.
+4. Select **Status** (Pending/Finished).
+5. Click **Add Item**.
+6. Enter type-specific attributes when prompted.
+7. Item appears in the display area automatically sorted by due date.
+
+### Deleting an Item
+1. Enter the exact title in the **Title** field
+2. Click **Delete Item**
+3. Item is removed from the system.
+
+### Updating Status
+1. Enter the item title
+2. Select new status (Pending/Finished)
+3. Click **Update Status**
+4. Status symbol updates immediately (✓ COMPLETE, ! OVERDUE, ○ PENDING).
+
+### Searching for Items
+1. Click **Search Item** button
+2. Enter title (case-insensitive search)
+3. View full item details in pop dialog
+
+### Viewing Items
+- **Display All** - Shows all items sorted by due date.
+- **Show Overdue** - Shows only incomplete items past their due date.
 
 ## UML Diagram
 The UML Diagram illustrates the class hierarchy and relationships between the components in the system 
@@ -81,9 +98,10 @@ The UML Diagram illustrates the class hierarchy and relationships between the co
   - Assignment -> Homework, Quiz, Project, Exam
   - Task -> Study, Meeting, Reading
 - Manager class: ItemManager handles storage and operations
+- GUI front-end: ItemManagerFE
 
 ## Exception Handling
-The program uses a custom exception handling to improve reliability and prevent errors caused by invalid user input.
+The program uses custom exception handling to improve reliability and prevent errors caused by invalid user input.
 
 **Handled exceptions include:**
 1. DuplicateItemException - Triggered when adding an item with a title that already exists.
@@ -92,10 +110,10 @@ The program uses a custom exception handling to improve reliability and prevent 
 4. NumberFormatException - Triggered when numeric input is entered incorrectly.
 5. DateTimeParseException - Triggered when dates are not entered in MM/DD/YYYY format.
 
-All exceptions are handled through dialog messages so the user receives feedback.
+All exceptions are handled through dialog messages, so the user receives feedback.
 
 ## Testing Checklist
-1. Program compiles and runs successfully.
+1. Program compiles with no errors and runs successfully.
 2. Add item feature works for all item types.
 3. Duplicate titles are rejected.
 4. Invalid inputs are handled correctly.
@@ -109,10 +127,10 @@ All exceptions are handled through dialog messages so the user receives feedback
 **Current limitations of the program include:**
 
 1. Data is not permanently saved after closing the program.
-3. Editing existing item details is not supported directly.
-4. GUI layout uses absolute positioning and may not resize perfectly.
-5. Search only matches exact titles (case-insensitive).
-6. No notification or reminder system is included.
+2. Editing existing item details is not supported directly.
+3. GUI layout uses absolute positioning and may not resize perfectly.
+4. Search only matches exact titles (case-insensitive).
+5. No notification or reminder system is included.
 
 These limitations can be improved in future versions.
 
