@@ -36,7 +36,10 @@ public class Meeting extends Task {
     */
 
     public void setLocation(String location) {
-        this.location = (location == null) ? "TBD" : location; // added validation when setting location
+        if (location == null || location.trim().isEmpty()) {
+			throw new IllegalArgumentException("Location cannot be null or empty.");
+		}
+		this.location = location;
     }
 
     // toString method

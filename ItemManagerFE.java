@@ -105,8 +105,13 @@ public class ItemManagerFE
 
         // show overdue items only
         JButton overdueButton = new JButton("Show Overdue");
-        overdueButton.setBounds(370, 100, 280, 30);
+        overdueButton.setBounds(370, 100, 130, 30);
         frame.add(overdueButton);
+
+        // H ADDED: Searches for item
+        JButton searchButton = new JButton("Search Item");
+        searchButton.setBounds(520, 100, 130, 30);
+        frame.add(searchButton);
 
         // output area
 
@@ -125,6 +130,7 @@ public class ItemManagerFE
         updateButton.addActionListener(e -> updateStatus());
         displayButton.addActionListener(e -> updateDisplay());
         overdueButton.addActionListener(e -> showOverdue());
+        searchButton.addActionListener(e -> searchItem());
 
         frame.setVisible(true);
     }
@@ -426,6 +432,21 @@ public class ItemManagerFE
             {
                 displayArea.append(item.toString() + "\n\n");
             }
+        }
+    }
+
+    // H ADDED: Searches for item by title
+    private static void searchItem()
+    {
+        String title = JOptionPane.showInputDialog(null, "Enter title to search:");
+        if (title == null || title.trim().isEmpty()) return;
+        
+        Item item = manager.searchByTitle(title);
+        
+        if (item == null) {
+            JOptionPane.showMessageDialog(null, "Item not found.");
+        } else {
+            JOptionPane.showMessageDialog(null, item.toString(), "Item Found", JOptionPane.INFORMATION_MESSAGE);
         }
     }
 
