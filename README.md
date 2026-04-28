@@ -40,15 +40,30 @@ Main Java Concepts illustrated:
 7. **Status Indicators** - Visual symbols that indicate the status of items (✓ COMPLETE, ! OVERDUE, ○ PENDING)
 
 ## Requirements
+- Java development kit (JDK 17)
+- IDE such as Visual Studio Code, Eclipse or IntelliJ
+- Basic understanding of java and object-oriented programming
 
 
 ## Getting Started in Eclipse
+1. Open Eclipse IDE
+2. Create a new Java project
+3. Import or copy all .java files into the src folder
+4. Ensure all items are in the same package
+5. Locate ItemManagerFE.java
+6. Right-click the file  and select Run As -> Java Application
 
 
 ## How to Use
 
 
 ## UML Diagram
+The UML Diagram illustrates the class hierarchy and relationships between the components in the system 
+- Base Class: Item
+- Subclasses:
+  - Assignment -> Homework, Quiz, Project, Exam
+  - Task -> Study, Meeting, Reading
+- Manager class: ItemManager handles storage and operations
 
 
 ## Exception Handling
