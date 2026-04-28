@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
 
 public class ItemManagerFE 
 {
@@ -32,8 +33,8 @@ public class ItemManagerFE
         descLabel.setBounds(20, 55, 100, 25);
         frame.add(descLabel);
 
-        JLabel dueLabel = new JLabel("Due Date:");
-        dueLabel.setBounds(20, 90, 100, 25);
+        JLabel dueLabel = new JLabel("Due Date: (MM/DD/YYYY):");
+        dueLabel.setBounds(20, 90, 150, 25);
         frame.add(dueLabel);
 
         JLabel typeLabel = new JLabel("Item Type:");
@@ -56,9 +57,10 @@ public class ItemManagerFE
         descField.setBounds(130, 55, 200, 25);
         frame.add(descField);
 
-        // user enters due date in yyyy-mm-dd
-        dueDateField = new JTextField("2026-04-28");
-        dueDateField.setBounds(130, 90, 200, 25);
+        // user enters due date in MM/DD/YYYY
+        dueDateField = new JTextField(); // H FIXED: changed date format
+        dueDateField.setBounds(180, 90, 150, 25);
+        dueDateField.setText(LocalDate.now().plusDays(7).format(Item.DATE_FORMATTER)); // sets example date to be 7 days from current
         frame.add(dueDateField);
 
         // combo boxes
@@ -134,7 +136,15 @@ public class ItemManagerFE
         {
             String title = titleField.getText().trim();
             String desc = descField.getText().trim();
-            LocalDate due = LocalDate.parse(dueDateField.getText().trim());
+
+            // H ADDED: Date parsing w/ exception handling
+            LocalDate due;
+            try {
+                due = LocalDate.parse(dueDateField.getText().trim(), Item.DATE_FORMATTER);
+            } catch (DateTimeParseException e) {
+                JOptionPane.showMessageDialog(null, "Invalid date format. Use MM/DD/YYYY");
+                return;
+            }
 
             String type = (String) typeBox.getSelectedItem();
             String status = (String) statusBox.getSelectedItem();
