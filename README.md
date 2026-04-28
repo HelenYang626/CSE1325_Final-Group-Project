@@ -39,6 +39,17 @@ Main Java Concepts illustrated:
 6. **Search Item** - Find items by its title (case-insentitive)
 7. **Status Indicators** - Visual symbols that indicate the status of items (✓ COMPLETE, ! OVERDUE, ○ PENDING)
 
+## Supported Item Types
+| Type | Attributes | Validation Rules |
+| **Homework** | Max points, weight, page count, problem count | Points > 0, 0 < weight <= 1.0, pages >= 1, problems >= 1|
+| **Quiz** | Max points, weight, time limit, question count | Points > 0, 0 < weight <= 1.0, time >= 1 minute, questions >= 1|
+| **Project**| Max points, weight, group size, has presentation | Points > 0, 0 < weight <= 1.0, group size >= 1, present is true or false
+| **Exam** | Max points, weight, duration, location | Points > 0, 0 < weight <= 1.0, duration >= 0, location non-empty |
+| **Study** | Estimated hours, location | Hours > 0, location non-empty |
+| **Meeting** | Estimated hours, location | Hours > 0, location non-empty |
+| **Reading** | Estimated hours, pages | Hours > 0, pages >=1 |
+
+
 ## Requirements
 
 
