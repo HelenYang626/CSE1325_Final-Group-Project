@@ -98,7 +98,6 @@ All exceptions are handled through dialog messages so the user receives feedback
 **Current limitations of the program include:**
 
 1. Data is not permanently saved after closing the program.
-2. Items are stored using arrays instead of dynamic collections.
 3. Editing existing item details is not supported directly.
 4. GUI layout uses absolute positioning and may not resize perfectly.
 5. Search only matches exact titles (case-insensitive).
