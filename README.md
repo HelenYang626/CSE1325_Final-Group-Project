@@ -55,7 +55,13 @@ Main Java Concepts illustrated:
 
 
 ## How to Use
-
+1. Launch the application
+2. Enter title, description, and due date.
+3. Select item type.
+4. Click **Add Item**.
+5. Enter extra attributes when prompted.
+6. Use buttons to display, search, delete, or update items.
+7. Use **Show Overdue** to view overdue items.
 
 ## UML Diagram
 The UML Diagram illustrates the class hierarchy and relationships between the components in the system 
