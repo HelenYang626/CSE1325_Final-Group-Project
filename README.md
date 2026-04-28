@@ -76,15 +76,31 @@ The UML Diagram illustrates the class hierarchy and relationships between the co
 
 
 ## Testing Checklist
-
+1. Program compiles and runs successfully.
+2. Add item feature works for all item types.
+3. Duplicate titles are rejected.
+4. Invalid inputs are handled correctly.
+5. Delete feature works.
+6. Search feature works.
+7. Update status works.
+8. Overdue filtering works.
+9. GUI updates after each action.
 
 ## Known Limitations
 
 
 ## Future Enhancements
-
+1. Save/load data from file
+2. Better GUI layout
+3. Edit existing items
+4. Assignment grade feature
+5. Average total grade feature
+6. Notifications/reminders
 
 ## Credits
-
+Developed by: Group 7: Helen Yang, Rija Aziz, Gia-Minh Bui, Linda Orozco
+Instructor: Dr. Jiandong (Jin) Wang 
+Course: CSE 1325 – Object-Oriented Programming
 
 ## License
+For educational use only.
