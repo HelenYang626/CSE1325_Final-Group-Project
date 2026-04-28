@@ -94,6 +94,7 @@ public class ItemManager {
         return null; // returns null if no items match
     }
 
+    /* COMMENTED OUT: Not used in GUI but maybe later
     // markComplete method - marks an item as complete
     public void markComplete(String title) throws ItemNotFoundException {
         for (int i = 0; i < items.length; i++) {
@@ -104,6 +105,7 @@ public class ItemManager {
         }
         throw new ItemNotFoundException("Item '" + title + "' not found.");
     }
+    */
 
     // getItems method - returns a new array of all non-null items
     public Item[] getAllItems() {
@@ -146,6 +148,7 @@ public class ItemManager {
         return result;
     }
 
+    /* COMMENTED OUT: Not used in GUI but maybe later
     // clearItems method - clears all items from manager
     public void clearItems() {
         for (int i = 0; i < items.length; i++) {
@@ -174,9 +177,10 @@ public class ItemManager {
         }
         return count;
     }
-
+     
     // toString method
     public String toString() {
         return "ItemManager: " + getItemCount() + " items, " + getIncompleteCount() + " incomplete.";
     }
+    */
 }
