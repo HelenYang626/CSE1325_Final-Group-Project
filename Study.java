@@ -13,7 +13,7 @@ public class Study extends Task {
     // Constructor
     public Study(String title, String description, LocalDate dueDate, String type, double estHrs, String location) {
         super(title, description, dueDate, type, estHrs);
-        this.location = location;
+        this.setLocation(location);
     }
 
     // Getters

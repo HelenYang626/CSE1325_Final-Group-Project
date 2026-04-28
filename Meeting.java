@@ -14,7 +14,7 @@ public class Meeting extends Task {
     public Meeting(String title, String description, LocalDate dueDate,
                    String type, double estHrs, String location) {
         super(title, description, dueDate, type, estHrs);
-        this.location = location;
+        this.setLocation(location);
     }
 
     // Getters
@@ -36,7 +36,7 @@ public class Meeting extends Task {
     */
 
     public void setLocation(String location) {
-        this.location = location;
+        this.location = (location == null) ? "TBD" : location; // added validation when setting location
     }
 
     // toString method

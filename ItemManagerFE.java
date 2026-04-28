@@ -139,91 +139,164 @@ public class ItemManagerFE
             String type = (String) typeBox.getSelectedItem();
             String status = (String) statusBox.getSelectedItem();
 
+            // H ADDED: Checks if title and date is empty
+            if (title.isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Title cannot be empty.");
+                return;
+            }
+            if (due == null) {
+                JOptionPane.showMessageDialog(null, "Due date cannot be empty.");
+                return;
+            }
+
             Item item = null;
 
             // homework
             if (type.equals("Homework"))
             {
-                // prompt user for homework-specific attributes
-                double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
-                double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
-                int pages = Integer.parseInt(JOptionPane.showInputDialog("Enter page count:"));
-                int problems = Integer.parseInt(JOptionPane.showInputDialog("Enter number of problems:"));
+                try { // prompt user for homework-specific attributes
+                    double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
+                    double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
+                    int pages = Integer.parseInt(JOptionPane.showInputDialog("Enter page count:"));
+                    int problems = Integer.parseInt(JOptionPane.showInputDialog("Enter number of problems:"));
 
-                // homework class validation handles invalid values
-                item = new Homework(title, desc, due, type, points, weight, pages, problems);
-            }
+                    // homework class validation handles invalid values
+                    item = new Homework(title, desc, due, type, points, weight, pages, problems);
+                    
+                // H ADDED: catches invalid values
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Invalid number format.");
+                    return;
+                } catch (IllegalArgumentException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    return;
+                }
+            } 
 
             // quiz
             else if (type.equals("Quiz"))
             {
-                // prompt user for quiz-specific attributes
-                double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
-                double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
-                double time = Double.parseDouble(JOptionPane.showInputDialog("Enter time limit (minutes):"));
-                int questions = Integer.parseInt(JOptionPane.showInputDialog("Enter question count:"));
+                try { // prompt user for quiz-specific attributes
+                    double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
+                    double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
+                    double time = Double.parseDouble(JOptionPane.showInputDialog("Enter time limit (minutes):"));
+                    int questions = Integer.parseInt(JOptionPane.showInputDialog("Enter question count:"));
 
-                // quiz class validation handles invalid values
-                item = new Quiz(title, desc, due, type,points, weight, time, questions);
+                    // quiz class validation handles invalid values
+                    item = new Quiz(title, desc, due, type,points, weight, time, questions);
+                    
+                // H ADDED: catches invalid values
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Invalid number format.");
+                    return;
+                } catch (IllegalArgumentException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    return;
+                }
             }
 
             // project
             else if (type.equals("Project"))
             {
-                // prompt user for project-specific attributes
-                double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
-                double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
-                int groupSize = Integer.parseInt(JOptionPane.showInputDialog("Enter group size:"));
-                boolean present = JOptionPane.showConfirmDialog(null, "Has presentation?", "Project", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
+                try { // prompt user for project-specific attributes
+                    double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
+                    double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
+                    int groupSize = Integer.parseInt(JOptionPane.showInputDialog("Enter group size:"));
+                    boolean present = JOptionPane.showConfirmDialog(null, "Has presentation?", "Project", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
 
-                // project class validation handles invalid values
-                item = new Project(title, desc, due, type, points, weight, groupSize, present);
+                    // project class validation handles invalid values
+                    item = new Project(title, desc, due, type, points, weight, groupSize, present);
+                    
+                // H ADDED: catches invalid values
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Invalid number format.");
+                    return;
+                } catch (IllegalArgumentException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    return;
+                } 
             }
 
             // exam
             else if (type.equals("Exam"))
             {
-                // prompt user for exam-specific attributes
-                double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
-                double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
-                double duration = Double.parseDouble(JOptionPane.showInputDialog("Enter duration (minutes):"));
-                String location = JOptionPane.showInputDialog("Enter location:");
+                try { // prompt user for exam-specific attributes
+                    double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
+                    double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
+                    double duration = Double.parseDouble(JOptionPane.showInputDialog("Enter duration (minutes):"));
+                    String location = JOptionPane.showInputDialog("Enter location:");
 
-                // exam class validation handles invalid values
-                item = new Exam(title, desc, due, type, points, weight, duration, location);
+                    // exam class validation handles invalid values
+                    item = new Exam(title, desc, due, type, points, weight, duration, location);
+                    
+                // H ADDED: catches invalid values
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Invalid number format.");
+                    return;
+                } catch (IllegalArgumentException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    return;
+                }
             }
 
             // study
             else if (type.equals("Study"))
             {
-                // prompt user for study-specific attributes
-                double hrs = Double.parseDouble(JOptionPane.showInputDialog("Enter estimated hours:"));
-                String location = JOptionPane.showInputDialog("Enter location:");
+                try { // prompt user for study-specific attributes
+                    double hrs = Double.parseDouble(JOptionPane.showInputDialog("Enter estimated hours:"));
+                    String location = JOptionPane.showInputDialog("Enter location:");
 
-                // study class validation handles invalid values
-                item = new Study(title, desc, due, type, hrs, location);
+                    // study class validation handles invalid values
+                    item = new Study(title, desc, due, type, hrs, location);
+                    
+                // H ADDED: catches invalid values
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Invalid number format.");
+                    return;
+                } catch (IllegalArgumentException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    return;
+                }            
             }
 
             // meeting
             else if (type.equals("Meeting"))
             {
-                // prompt user for meeting-specific attributes
-                double hrs = Double.parseDouble(JOptionPane.showInputDialog("Enter estimated hours:"));
-                String location = JOptionPane.showInputDialog("Enter meeting location:");
+                try { // prompt user for meeting-specific attributes
+                    double hrs = Double.parseDouble(JOptionPane.showInputDialog("Enter estimated hours:"));
+                    String location = JOptionPane.showInputDialog("Enter meeting location:");
 
-                // meeting class validation handles invalid values
-                item = new Meeting(title, desc, due, type, hrs, location);
+                    // meeting class validation handles invalid values
+                    item = new Meeting(title, desc, due, type, hrs, location);
+                    
+                // H ADDED: catches invalid values
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Invalid number format.");
+                    return;
+                } catch (IllegalArgumentException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    return;
+                }
             }
 
             // reading
             else if (type.equals("Reading"))
             {
-                // prompt user for reading-specific attributes
-                double hrs = Double.parseDouble(JOptionPane.showInputDialog("Enter estimated hours:"));
-                int pages = Integer.parseInt(JOptionPane.showInputDialog("Enter pages to read:"));
+                try { // prompt user for reading-specific attributes
+                    double hrs = Double.parseDouble(JOptionPane.showInputDialog("Enter estimated hours:"));
+                    int pages = Integer.parseInt(JOptionPane.showInputDialog("Enter pages to read:"));
 
-                // reading class validation handles invalid values
-                item = new Reading(title, desc, due, type, hrs, pages);
+                    // reading class validation handles invalid values
+                    item = new Reading(title, desc, due, type, hrs, pages);
+
+                // H ADDED: catches invalid values
+                } catch (NumberFormatException e) {
+                    JOptionPane.showMessageDialog(null, "Invalid number format.");
+                    return;
+                } catch (IllegalArgumentException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage());
+                    return;
+                }
             }
 
             // generic
@@ -233,14 +306,27 @@ public class ItemManagerFE
             }
 
             // status
-            if (status.equals("Finished"))
+            if (status.equals("Finished") && item != null)
             {
                 item.setComplete(true);
             }
 
+            if (item != null) {
             manager.addItem(item);
-
             updateDisplay();
+            }
+        }
+        // catches errors and shows specific messages for duplicates, validation, etc
+        catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Invalid number format. Please enter valid numbers.");
+        }
+        catch (DuplicateItemException e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
+        catch (IllegalArgumentException e)
+        {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
         catch (Exception e)
         {

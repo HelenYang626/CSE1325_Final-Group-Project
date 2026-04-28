@@ -14,7 +14,7 @@ public class Task extends Item {
     // Constructor
     public Task(String title, String description, LocalDate dueDate, String type, double estHrs) {
         super(title, description, dueDate, type); // updated constructor 
-        this.estHrs = estHrs; // changed instance variable to 'estHrs'
+        this.setEstHrs(estHrs); // changed instance variable to 'estHrs'
     }
 
     // Getter

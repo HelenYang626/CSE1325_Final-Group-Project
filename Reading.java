@@ -15,7 +15,7 @@ public class Reading extends Task {
     public Reading(String title, String description, LocalDate dueDate,
                    String type, double estHrs, int pages) {
         super(title, description, dueDate, type, estHrs);
-        this.pages = pages;
+        this.setPages(pages);
     }
 
     // Getter
