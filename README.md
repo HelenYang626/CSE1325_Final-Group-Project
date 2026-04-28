@@ -1,5 +1,5 @@
 # Student Task & Assignment Management System
-A Java application for students to manage items such as academic tasks, assignments, exams, and study activities using a graphical user interface (GUI). This project demonstrates object-oriented (OOP) principles, inheritance hierarchies, exception handling, and Swing GUI development. It is designed as a final course project and is compatible with Eclipse IDE and Visual Studio IDE. 
+A Java application for students to manage items such as academic tasks, assignments, exams, and study activities using a graphical user interface (GUI). This project demonstrates object-oriented (OOP) principles, inheritance hierarchies, exception handling, and Swing GUI development. It is designed as a final course project and is compatible with Eclipse IDE and Visual Studio Code. 
 
 ## Table of Contents
 - [Overview](#overview)
@@ -22,19 +22,19 @@ A Java application for students to manage items such as academic tasks, assignme
 Main Java Concepts illustrated:
 - **Inheritance** - Item -> Assignment -> (Homework, Quiz, Project, Exam) and Item -> Task -> (Study, Meeting, Reading)
 - **Encapsulation** - Private fields with public getters/setters
-- **Polymorphism** - Overriden toString() methods for each item type
+- **Polymorphism** - Overridden toString() methods for each item type
 - **Exception Handling** - Custom exceptions (DuplicateItemException, ItemNotFoundException)
 - **GUI Development** - Swing-based interface with event-driven programming
 - **Input validaton** - Validation performed in mutator methods
 
 ## Key Features
-1. **Add Item** - Create 7 different types of academic tasks with type-specific attributes
-2. **Delete Item** - Remove items by its title
-3. **Update Status** - Modify the status of items by their title to either complete or pending
-4. **Display All** - Display all items automatically sorted by due date from earliest to latest date
-5. **Show Overdue** - Filter and display only incomplete tasks past their due date
-6. **Search Item** - Find items by their title (case-insensitive)
-7. **Status Indicators** - Visual symbols that indicate the status of items (✓ COMPLETE, ! OVERDUE, ○ PENDING)
+1. **Add Item** - Create 7 different types of academic tasks with type-specific attributes.
+2. **Delete Item** - Remove items by its title.
+3. **Update Status** - Modify the status of items by their title to either complete or pending.
+4. **Display All** - Display all items automatically sorted by due date from earliest to latest date.
+5. **Show Overdue** - Filter and display only incomplete tasks past their due date.
+6. **Search Item** - Find items by their title (case-insensitive).
+7. **Status Indicators** - Visual symbols that indicate the status of items (✓ COMPLETE, ! OVERDUE, ○ PENDING). Note: Once an overdue item is marked complete, it shows ✓ COMPLETE instead of ! OVERDUE.
 
 ## Supported Item Types
 | Type | Attributes | Validation Rules |
@@ -127,10 +127,10 @@ All exceptions are handled through dialog messages, so the user receives feedbac
 **Current limitations of the program include:**
 
 1. Data is not permanently saved after closing the program.
-3. Editing existing item details is not supported directly.
-4. GUI layout uses absolute positioning and may not resize perfectly.
-5. Search only matches exact titles (case-insensitive).
-6. No notification or reminder system is included.
+2. Editing existing item details is not supported directly.
+3. GUI layout uses absolute positioning and may not resize perfectly.
+4. Search only matches exact titles (case-insensitive).
+5. No notification or reminder system is included.
 
 These limitations can be improved in future versions.
 
