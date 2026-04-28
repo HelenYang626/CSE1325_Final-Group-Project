@@ -115,7 +115,7 @@ These limitations can be improved in future versions.
 
 ## Credits
 Developed by: Group 7: Helen Yang, Rija Aziz, Gia-Minh Bui, Linda Orozco
-Instructor: Dr. Jiandong (Jin) Wang 
+Instructor: Dr. Jiandong (Jin) Wang
 Course: CSE 1325 – Object-Oriented Programming
 
 ## License
