@@ -9,10 +9,10 @@ A Java application for students to manage items such as academic tasks, assignme
 - [Getting Started in Eclipse](#getting-started-in-eclipse)
 - [How to Use](#how-to-use)
 - [UML Diagram](#uml-diagram)
-- [Exception Handling](#exception-handlling)
+- [Exception Handling](#exception-handling)
 - [Testing Checklist](#testing-checklist)
 - [Known Limitations](#known-limitations)
-- [Future Enhancements](#future-enhacements)
+- [Future Enhancements](#future-enhancements)
 - [Credits](#credits)
 - [License](#license)
 
