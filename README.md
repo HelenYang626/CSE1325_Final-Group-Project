@@ -114,9 +114,9 @@ These limitations can be improved in future versions.
 6. Notifications/reminders
 
 ## Credits
-1. Developed by: Group 7 - Helen Yang, Rija Aziz, Gia-Minh Bui, Linda Orozco
-2. Instructor: Dr. Jiang (Jin) Wang
-3. Course: CSE 1325 - Object-Oriented Programming
+Developed by: Group 7 - Helen Yang, Rija Aziz, Gia-Minh Bui, Linda Orozco
+Instructor: Dr. Jiang (Jin) Wang
+Course: CSE 1325 - Object-Oriented Programming
 
 ## License
 For educational use only.
