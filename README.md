@@ -26,14 +26,44 @@ Main Java Concepts illustrated:
 - **Encapsulation** - Private fields with public getters/setters
 - **Polymorphism** - Overriden toString() methods for each item type
 - **Exception Handling** - Custom exceptions (DusplicateItemException, ItemNotFound Exception)
-- **GUI Development** - Swing-based interfacfe with event-driven programming
+- **GUI Development** - Swing-based interface with event-driven programming
 - **Input validaton** - Validation performed in mutator methods
 
 
 ## Key Features
-- **Add Items**: Create different types of academic tasks with type-specific attributes
-- **Delete Items**: Remove tasks by title
-- **Update Status**: Mark tasks as complete or pending
-- **Display All**: View all tasks sorted by due date
-- **Show Overdue**: Display only incomplete tasks past their due date
-- **Search**: Find items by title (case-insentitive)
+1. **Add Item** - Create 7 different types of academic tasks with type-specific attributes
+2. **Delete Item** - Remove items by its title
+3. **Update Status** - Modify the status of items by its title to either complete or pending
+4. **Display All** - Display all items automatically sorted by due date from earliest to latest date
+5. **Show Overdue** - Filter and display only incomplete tasks past their due date
+6. **Search Item** - Find items by its title (case-insentitive)
+7. **Status Indicators** - Visual symbols that indicate the status of items (✓ COMPLETE, ! OVERDUE, ○ PENDING)
+
+## Requirements
+
+
+## Getting Started in Eclipse
+
+
+## How to Use
+
+
+## UML Diagram
+
+
+## Exception Handling
+
+
+## Testing Checklist
+
+
+## Known Limitations
+
+
+## Future Enhancements
+
+
+## Credits
+
+
+## License
