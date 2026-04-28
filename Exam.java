@@ -37,14 +37,10 @@ public class Exam extends Assignment{
 	
 	public void setLocation(String aL) 
 	{
-		if(aL!=null) //might change it
-		{
-			this.location=aL;
+		if (aL == null || aL.trim().isEmpty()) {
+			throw new IllegalArgumentException("Location cannot be null or empty.");
 		}
-		else
-		{
-			this.location="TBD";
-		}
+		this.location = aL;
 	}
 	
 	public String toString()

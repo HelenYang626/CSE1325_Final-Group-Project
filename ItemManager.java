@@ -38,6 +38,10 @@ public class ItemManager {
 
     // removeItem method - removes an item by title
     public void removeItem(String title) throws ItemNotFoundException {
+        if (title == null || title.trim().isEmpty()) {
+            throw new ItemNotFoundException("Title cannot be empty.");
+        }
+        
         int removeIndex = -1; // Initialize remove index
 
         // Find index of item to remove
@@ -65,7 +69,7 @@ public class ItemManager {
         while (swapped) {
             swapped = false;
             for (int i = 0; i < items.length -1; i++) {
-                if (items[i] == null || items[i + 1] == null) break; // stop if we reach null items
+                if (items[i] == null || items[i + 1] == null) continue; // stop if we reach null items
                 
                 // Compare due dates and swap if necessary
                 if (items[i].getDueDate().isAfter(items[i + 1].getDueDate())) {

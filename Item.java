@@ -11,14 +11,15 @@ public class Item {
 
     // CONSTANTS
     public static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("MM/dd/yyyy"); // For consistent date formatting
+    private static final int MAX_DESC_LENGTH = 50; 
 
     // DEFAULT CONSTRUCTOR
     public Item() {
-        this.title = "Untitled";
-        this.description = "";
+        this.setTitle("Untitled");
+        this.setDescription( "");
         this.dueDate = LocalDate.now().plusDays(7); // Default due date is 7 days
         this.complete = false; // Always starts as an incomplete item
-        this.type = "Generic"; // Default type
+        this.setType("Generic"); // Default type
     }
 
     // PARAMETERIZED CONSTRUCTOR
@@ -27,7 +28,7 @@ public class Item {
         this.setDescription(description);
         this.setDueDate(dueDate);
         this.complete = false; // Always starts as an incomplete item
-        this.type = type; 
+        this.setType(type); 
     }
 
     // ACCESSORS
@@ -100,6 +101,7 @@ public class Item {
     // toString() method
     public String toString() {
         String status = complete ? "[✓ COMPLETE]" : (isOverdue() ? "[! OVERDUE]" : "[○ PENDING]");
-        return status + " " + title + " | Type: " + type + " | Due: " + dueDate.format(DATE_FORMATTER) + " | Description: " + (description.length() > 50 ? description.substring(0,47) + "..." : description);
+        String displayDesc = description.length() > MAX_DESC_LENGTH ? description.substring(0, MAX_DESC_LENGTH - 3) + "..." : description;
+        return status + " " + title + " | Type: " + type + " | Due: " + dueDate.format(DATE_FORMATTER) + " | Description: " + displayDesc;
     }
 }

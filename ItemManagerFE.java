@@ -354,6 +354,9 @@ public class ItemManagerFE
             updateDisplay();
 
         } 
+        catch (ItemNotFoundException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
+        }
         catch (Exception e) 
         {
             JOptionPane.showMessageDialog(null, "Item not found.");
@@ -390,7 +393,7 @@ public class ItemManagerFE
         } 
         catch (Exception e) 
         {
-            displayArea.setText("Could not update status.");
+            JOptionPane.showMessageDialog(null, "Could not update status.");
         }
     }
 

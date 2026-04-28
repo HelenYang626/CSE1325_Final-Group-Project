@@ -25,8 +25,8 @@ public class Reading extends Task {
 
     // Setter
     public void setPages(int pages) {
-        if (pages < 0) {
-            throw new IllegalArgumentException("Pages cannot be negative.");
+        if (pages < 1) {
+            throw new IllegalArgumentException("Pages must be at least 1.");
         }
         this.pages = pages;
     }
