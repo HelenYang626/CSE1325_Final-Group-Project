@@ -71,9 +71,17 @@ The UML Diagram illustrates the class hierarchy and relationships between the co
   - Task -> Study, Meeting, Reading
 - Manager class: ItemManager handles storage and operations
 
-
 ## Exception Handling
+The program uses a custom exception handling to improve reliability and prevent errors caused by invalid user input.
 
+**Handled exceptions include:**
+1. DuplicateItemException – Triggered when adding an item with a title that already exists.
+2. ItemNotFoundException – Triggered when deleting or searching for a title not found.
+3. IllegalArgumentException – Triggered when values violate class validation rules.
+4. NumberFormatException – Triggered when numeric input is entered incorrectly.
+5. DateTimeParseException – Triggered when dates are not entered in MM/DD/YYYY format.
+
+All exceptions are handled through dialog messages so the user receives feedback.
 
 ## Testing Checklist
 1. Program compiles and runs successfully.
@@ -87,7 +95,16 @@ The UML Diagram illustrates the class hierarchy and relationships between the co
 9. GUI updates after each action.
 
 ## Known Limitations
+**Current limitations of the program include:**
 
+1. Data is not permanently saved after closing the program.
+2. Items are stored using arrays instead of dynamic collections.
+3. Editing existing item details is not supported directly.
+4. GUI layout uses absolute positioning and may not resize perfectly.
+5. Search only matches exact titles (case-insensitive).
+6. No notification or reminder system is included.
+
+These limitations can be improved in future versions.
 
 ## Future Enhancements
 1. Save/load data from file
