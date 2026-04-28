@@ -33,7 +33,7 @@ public class ItemManagerFE
         descLabel.setBounds(20, 55, 100, 25);
         frame.add(descLabel);
 
-        JLabel dueLabel = new JLabel("Due Date: (MM/DD/YYYY):");
+        JLabel dueLabel = new JLabel("Due Date (MM/DD/YYYY):");
         dueLabel.setBounds(20, 90, 150, 25);
         frame.add(dueLabel);
 
@@ -322,8 +322,9 @@ public class ItemManagerFE
             }
 
             if (item != null) {
-            manager.addItem(item);
-            updateDisplay();
+                manager.addItem(item);
+                clearInputs(); // calls method to auto clear input fields
+                updateDisplay();
             }
         }
         // catches errors and shows specific messages for duplicates, validation, etc
@@ -423,5 +424,12 @@ public class ItemManagerFE
                 displayArea.append(item.toString() + "\n\n");
             }
         }
+    }
+
+    // H ADDED: clearInputs() method - input fields auto cleared after item added
+    private static void clearInputs() {
+        titleField.setText("");
+        descField.setText("");
+        dueDateField.setText(LocalDate.now().plusDays(7).format(Item.DATE_FORMATTER));
     }
 }
