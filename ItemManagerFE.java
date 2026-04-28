@@ -72,7 +72,7 @@ public class ItemManagerFE
         frame.add(typeBox);
 
         // choices for item progress status
-        String[] statuses = {"Pending", "In Progress", "Finished"};
+        String[] statuses = {"Pending", "Finished"};
 
         // drop down menu for status
         statusBox = new JComboBox<>(statuses);
@@ -128,38 +128,123 @@ public class ItemManagerFE
     }
 
     // add item
-    private static void addItem() 
+    private static void addItem()
     {
-        try 
+        try
         {
-            // read input value
             String title = titleField.getText().trim();
             String desc = descField.getText().trim();
-
-            // convert text into LocalDate
             LocalDate due = LocalDate.parse(dueDateField.getText().trim());
 
-            // get selected type and status
             String type = (String) typeBox.getSelectedItem();
             String status = (String) statusBox.getSelectedItem();
 
-            // create new item object
-            Item item = new Item(title, desc, due, type);
+            Item item = null;
 
-            // if finished, mark as complete
-            if (status.equals("Finished")) 
+            // homework
+            if (type.equals("Homework"))
+            {
+                // prompt user for homework-specific attributes
+                double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
+                double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
+                int pages = Integer.parseInt(JOptionPane.showInputDialog("Enter page count:"));
+                int problems = Integer.parseInt(JOptionPane.showInputDialog("Enter number of problems:"));
+
+                // homework class validation handles invalid values
+                item = new Homework(title, desc, due, type, points, weight, pages, problems);
+            }
+
+            // quiz
+            else if (type.equals("Quiz"))
+            {
+                // prompt user for quiz-specific attributes
+                double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
+                double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
+                double time = Double.parseDouble(JOptionPane.showInputDialog("Enter time limit (minutes):"));
+                int questions = Integer.parseInt(JOptionPane.showInputDialog("Enter question count:"));
+
+                // quiz class validation handles invalid values
+                item = new Quiz(title, desc, due, type,points, weight, time, questions);
+            }
+
+            // project
+            else if (type.equals("Project"))
+            {
+                // prompt user for project-specific attributes
+                double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
+                double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
+                int groupSize = Integer.parseInt(JOptionPane.showInputDialog("Enter group size:"));
+                boolean present = JOptionPane.showConfirmDialog(null, "Has presentation?", "Project", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
+
+                // project class validation handles invalid values
+                item = new Project(title, desc, due, type, points, weight, groupSize, present);
+            }
+
+            // exam
+            else if (type.equals("Exam"))
+            {
+                // prompt user for exam-specific attributes
+                double points = Double.parseDouble(JOptionPane.showInputDialog("Enter max points:"));
+                double weight = Double.parseDouble(JOptionPane.showInputDialog("Enter weight:"));
+                double duration = Double.parseDouble(JOptionPane.showInputDialog("Enter duration (minutes):"));
+                String location = JOptionPane.showInputDialog("Enter location:");
+
+                // exam class validation handles invalid values
+                item = new Exam(title, desc, due, type, points, weight, duration, location);
+            }
+
+            // study
+            else if (type.equals("Study"))
+            {
+                // prompt user for study-specific attributes
+                double hrs = Double.parseDouble(JOptionPane.showInputDialog("Enter estimated hours:"));
+                String location = JOptionPane.showInputDialog("Enter location:");
+
+                // study class validation handles invalid values
+                item = new Study(title, desc, due, type, hrs, location);
+            }
+
+            // meeting
+            else if (type.equals("Meeting"))
+            {
+                // prompt user for meeting-specific attributes
+                double hrs = Double.parseDouble(JOptionPane.showInputDialog("Enter estimated hours:"));
+                String location = JOptionPane.showInputDialog("Enter meeting location:");
+
+                // meeting class validation handles invalid values
+                item = new Meeting(title, desc, due, type, hrs, location);
+            }
+
+            // reading
+            else if (type.equals("Reading"))
+            {
+                // prompt user for reading-specific attributes
+                double hrs = Double.parseDouble(JOptionPane.showInputDialog("Enter estimated hours:"));
+                int pages = Integer.parseInt(JOptionPane.showInputDialog("Enter pages to read:"));
+
+                // reading class validation handles invalid values
+                item = new Reading(title, desc, due, type, hrs, pages);
+            }
+
+            // generic
+            else
+            {
+                item = new Item(title, desc, due, type);
+            }
+
+            // status
+            if (status.equals("Finished"))
             {
                 item.setComplete(true);
             }
 
-            manager.addItem(item); // add item to mananger
+            manager.addItem(item);
 
             updateDisplay();
-
-        } 
-        catch (Exception e) 
+        }
+        catch (Exception e)
         {
-            displayArea.setText("Error adding item.\nCheck inputs.");
+            displayArea.setText("Error adding item:\n" + e.getMessage());
         }
     }
 
