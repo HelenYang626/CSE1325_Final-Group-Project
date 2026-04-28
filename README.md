@@ -75,11 +75,11 @@ The UML Diagram illustrates the class hierarchy and relationships between the co
 The program uses a custom exception handling to improve reliability and prevent errors caused by invalid user input.
 
 **Handled exceptions include:**
-1. DuplicateItemException – Triggered when adding an item with a title that already exists.
-2. ItemNotFoundException – Triggered when deleting or searching for a title not found.
-3. IllegalArgumentException – Triggered when values violate class validation rules.
-4. NumberFormatException – Triggered when numeric input is entered incorrectly.
-5. DateTimeParseException – Triggered when dates are not entered in MM/DD/YYYY format.
+1. DuplicateItemException - Triggered when adding an item with a title that already exists.
+2. ItemNotFoundException - Triggered when deleting or searching for a title not found.
+3. IllegalArgumentException - Triggered when values violate class validation rules.
+4. NumberFormatException - Triggered when numeric input is entered incorrectly.
+5. DateTimeParseException - Triggered when dates are not entered in MM/DD/YYYY format.
 
 All exceptions are handled through dialog messages so the user receives feedback.
 
