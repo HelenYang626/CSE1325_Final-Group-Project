@@ -341,7 +341,7 @@ public class ItemManagerFE
         }
         catch (Exception e)
         {
-            displayArea.setText("Error adding item:\n" + e.getMessage());
+            JOptionPane.showMessageDialog(null, "Error adding item:\n" + e.getMessage());
         }
     }
 
@@ -356,7 +356,7 @@ public class ItemManagerFE
         } 
         catch (Exception e) 
         {
-            displayArea.setText("Item not found.");
+            JOptionPane.showMessageDialog(null, "Item not found.");
         }
     }
 
@@ -372,7 +372,7 @@ public class ItemManagerFE
 
             if (item == null) 
             {
-                displayArea.setText("Item not found.");
+                JOptionPane.showMessageDialog(null, "Item not found.");
                 return;
             }
 
