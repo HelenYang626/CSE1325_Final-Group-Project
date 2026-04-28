@@ -51,30 +51,83 @@ Main Java Concepts illustrated:
 
 
 ## Requirements
+- Java development kit (JDK 17)
+- IDE such as Visual Studio Code, Eclipse or IntelliJ
+- Basic understanding of java and object-oriented programming
 
 
 ## Getting Started in Eclipse
+1. Open Eclipse IDE
+2. Create a new Java project
+3. Import or copy all .java files into the src folder
+4. Ensure all items are in the same package
+5. Locate ItemManagerFE.java
+6. Right-click the file  and select Run As -> Java Application
 
 
 ## How to Use
-
+1. Launch the application
+2. Enter title, description, and due date.
+3. Select item type.
+4. Click **Add Item**.
+5. Enter extra attributes when prompted.
+6. Use buttons to display, search, delete, or update items.
+7. Use **Show Overdue** to view overdue items.
 
 ## UML Diagram
-
+The UML Diagram illustrates the class hierarchy and relationships between the components in the system 
+- Base Class: Item
+- Subclasses:
+  - Assignment -> Homework, Quiz, Project, Exam
+  - Task -> Study, Meeting, Reading
+- Manager class: ItemManager handles storage and operations
 
 ## Exception Handling
+The program uses a custom exception handling to improve reliability and prevent errors caused by invalid user input.
 
+**Handled exceptions include:**
+1. DuplicateItemException - Triggered when adding an item with a title that already exists.
+2. ItemNotFoundException - Triggered when deleting or searching for a title not found.
+3. IllegalArgumentException - Triggered when values violate class validation rules.
+4. NumberFormatException - Triggered when numeric input is entered incorrectly.
+5. DateTimeParseException - Triggered when dates are not entered in MM/DD/YYYY format.
+
+All exceptions are handled through dialog messages so the user receives feedback.
 
 ## Testing Checklist
-
+1. Program compiles and runs successfully.
+2. Add item feature works for all item types.
+3. Duplicate titles are rejected.
+4. Invalid inputs are handled correctly.
+5. Delete feature works.
+6. Search feature works.
+7. Update status works.
+8. Overdue filtering works.
+9. GUI updates after each action.
 
 ## Known Limitations
+**Current limitations of the program include:**
 
+1. Data is not permanently saved after closing the program.
+3. Editing existing item details is not supported directly.
+4. GUI layout uses absolute positioning and may not resize perfectly.
+5. Search only matches exact titles (case-insensitive).
+6. No notification or reminder system is included.
+
+These limitations can be improved in future versions.
 
 ## Future Enhancements
-
+1. Save/load data from file
+2. Better GUI layout
+3. Edit existing items
+4. Assignment grade feature
+5. Average total grade feature
+6. Notifications/reminders
 
 ## Credits
-
+- Developed by: Group 7 - Helen Yang, Rija Aziz, Gia-Minh Bui, Linda Orozco
+- Instructor: Dr. Jiang (Jin) Wang
+- Course: CSE 1325 - Object-Oriented Programming
 
 ## License
+For educational use only.
