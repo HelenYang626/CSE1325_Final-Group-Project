@@ -357,6 +357,7 @@ public class ItemManagerFE
         try 
         {
             manager.removeItem(titleField.getText().trim());
+            titleField.setText(""); 
             updateDisplay();
 
         } 
@@ -365,7 +366,7 @@ public class ItemManagerFE
         }
         catch (Exception e) 
         {
-            JOptionPane.showMessageDialog(null, "Item not found.");
+            JOptionPane.showMessageDialog(null, "Error deleting item:\n" + e.getMessage());
         }
     }
 
@@ -394,6 +395,7 @@ public class ItemManagerFE
                 item.setComplete(false);
             }
 
+            titleField.setText(""); 
             updateDisplay();
 
         } 
