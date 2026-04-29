@@ -72,17 +72,18 @@ Main Java Concepts illustrated:
 7. Item appears in the display area automatically sorted by due date.
 
 ### Deleting an Item
-1. Enter the exact title in the **Title** field
-2. Click **Delete Item**
+1. Enter the exact item title in the **Title** field
+2. Click **Delete Item** button
 3. Item is removed from the system.
 
 ### Updating Status
-1. Enter the item title
+1. Enter the exact item title in the **Title** field
 2. Select new status (Pending/Finished)
 3. Click **Update Status**
 4. Status symbol updates immediately (✓ COMPLETE, ! OVERDUE, ○ PENDING).
 
 ### Searching for Items
+1. Enter the exact item title in the **Title** field
 1. Click **Search Item** button
 2. Enter title (case-insensitive search)
 3. View full item details in pop dialog
